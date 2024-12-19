@@ -193,7 +193,7 @@ server.get("/logout", authMiddleware, (req, resp) => {
 
 server.get("/", (req, resp) => {
   try {
-    res.send("Group - Members: Irum Rian, Ammar Sajjad , Muhammad Haseeb - Project: AirTik ( ADVANCED AIR (Reservation-system)) ");
+    return resp.json({ message: "Group - Members: Irum Rian, Ammar Sajjad , Muhammad Haseeb - Project: AirTik ( ADVANCED AIR (Reservation-system)) " });
 
   } catch (e) {
     console.log(e.message);
