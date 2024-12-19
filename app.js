@@ -189,9 +189,20 @@ server.get("/logout", authMiddleware, (req, resp) => {
   }
 });
 
-server.listen(PORT, () => {
+
+
+server.get("/", authMiddleware, (req, resp) => {
   try {
     res.send("Group - Members: Irum Rian, Ammar Sajjad , Muhammad Haseeb - Project: AirTik ( ADVANCED AIR (Reservation-system)) ");
+
+  } catch (e) {
+    console.log(e.message);
+  }
+});
+
+
+server.listen(PORT, () => {
+  try {
     console.log(`Auth server running on port ${PORT}`);
   } catch (e) {
     console.log(e.message);
